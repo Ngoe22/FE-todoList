@@ -8,6 +8,7 @@ export default function Home() {
           <h2>Lưu ý chung:</h2>
           <div>Sử dụng lệnh docker compose up để khởi chạy dự án tại localhost:3000.</div>
           <div>Thống nhất sử dụng Tailwind CSS cho toàn bộ dự án.</div>
+          <div></div>
       </>
   );
 }
