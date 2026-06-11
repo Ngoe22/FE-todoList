@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+
+:root {
+    --body-clr : #f4f4f4;
+    --gray-text:rgb(156 163 175) ;
+    --df-text : rgb(0 0 0);
+    --ctn-bg : white ;
+    --gray-bg : rgb(241 241 241);
+
+    /*  tickets  */
+    --tk-hl-text : rgb(29 78 216 );
+    --tk-hl-bg : rgb(239 246 255) ;
+    --tk-hl-border : rgb(191 219 254 );
+
+    --tk-text : rgb(191 219 254) ;
+    --tk-bg : rgb(239 246 255) ;
+    --tk-border : rgb(191 219 254 );
+
+    --tk-add-btn-clr: rgb(37 99 235) ;
+
+    /*  task  undone inprogress testing done */
+
+    --undone : rgb(255 107 87) ;
+    --inprogress :rgb(255 170 71) ;
+    --testing : rgb(92 212 133 ) ;
+    --done : rgb(62 149 235) ;
+    --stt-header : #ffffff;
+
+    /* ==================== components ====================  */
+    --badge-bg : rgb(241 241 241);
+    --badge-text : rgb(55 65 81 ) ;
+    --badge-border : rgb(156 163 175) ;
+}
+
+
+body {
+    background: var(--body-clr);
+}

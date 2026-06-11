@@ -1,4 +1,7 @@
+import './globals.css';
+
 export default function Home() {
+
   return (
       <>
           <div>Anh Cường: Phụ trách phần app/src/projects</div>

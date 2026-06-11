@@ -58,7 +58,4 @@ Tasks (many)
   - update(id, data)
   - delete(id)
 
-```bash
-npm install -g json-server
-json-server --watch db.json --port 3000
-```
+
