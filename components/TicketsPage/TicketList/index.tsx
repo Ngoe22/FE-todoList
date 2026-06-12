@@ -20,7 +20,6 @@ export default function TicketList (  ) {
             {scroll: false,});
     }
 
-
     const list =[] ;
     for ( const item of allTk ) {
         list.push(
@@ -29,12 +28,17 @@ export default function TicketList (  ) {
                 isSelected={item.id === currentID.tk}
                 title={item.title}
                 deadLine={item.deadline}
+
                 onselect = { ()=> {
                     ticketSelect(item.id )
                 } }
                 ondelete = { async ()=> {
                     const result = await ticketAPI.deleteCsr(item.id)
                     console.log(result)
+                    router.refresh()
+                } }
+                onedit={ ()=> {
+                    console.log(`edit`)
                 } }
             />
         )

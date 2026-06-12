@@ -148,18 +148,22 @@ export const ticketAPI = {
   // Tạo ticket mới api_csr_csr
   createCsr: (data) => api_csr.post("/tickets", data),
 
-  // Cập nhật ticket
   updateCsr: (id, data) => api_csr.put(`/tickets/${id}`, data),
 
 
   // Xóa ticket (kèm tasks phụ thuộc)
   deleteCsr: async (id) => {
     try {
-      // Xóa tất cả tasks của ticket
-      // await api_csr.delete(`/tasks?ticketId=${id}`);  jsonsever khong chay the nay
+
+      const tasksRes = await api_csr.get(`/tasks?ticketId=${id}`);
+
+      const tasks = tasksRes.data;
+      await Promise.all(tasks.map(task => api_csr.delete(`/tasks/${task.id}`)));
 
       // Xóa ticket
       return api_csr.delete(`/tickets/${id}`);
+
+
     } catch (error) {
       console.error("Error deleting ticket:", error);
       throw error;

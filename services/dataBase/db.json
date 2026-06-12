@@ -48,13 +48,6 @@
       "description": "--",
       "projectId": "1",
       "id": "5ZQYBQQ"
-    },
-    {
-      "title": "moi",
-      "deadline": "2026-06-28",
-      "description": "--",
-      "projectId": "1",
-      "id": "ZBs0Gw_"
     }
   ],
   "tasks": [
@@ -63,7 +56,7 @@
       "projectId": "1",
       "ticketId": "1",
       "title": "Tạo cấu trúc thư mục",
-      "status": "undone",
+      "status": "done",
       "deadline": "2026-06-01"
     },
     {

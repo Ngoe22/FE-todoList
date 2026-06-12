@@ -23,7 +23,7 @@ export default async function Tickets ({ searchParams }: Props) {
     const { data: allTickets } = await ticketAPI.getByProjectId(params.pj);
 
     return (
-        <div className={"flex flex-wrap gap-x-8 gap-y-10 m-auto mt-10 w-[90%] "} >
+        <div className={"flex flex-wrap gap-x-8 gap-y-10 m-auto mt-10 w-[95%] mb-3"} >
             <div className={ css.container + "w-4/4" } >
                 <TopBar projectName={currentProject.name } />
             </div>
