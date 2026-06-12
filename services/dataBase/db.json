@@ -41,13 +41,6 @@
       "description": "--",
       "projectId": "1",
       "id": "i8T_NbO"
-    },
-    {
-      "title": "qwe3123",
-      "deadline": "2026-06-23",
-      "description": "--",
-      "projectId": "1",
-      "id": "5ZQYBQQ"
     }
   ],
   "tasks": [
@@ -72,7 +65,7 @@
       "projectId": "1",
       "ticketId": "1",
       "title": "Cài thư viện cần thiết",
-      "status": "testing",
+      "status": "undone",
       "deadline": "2026-06-03"
     },
     {

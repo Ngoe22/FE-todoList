@@ -20,9 +20,9 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
             className= {`flex justify-between p-3 border rounded-xl ${addCss.tag} `}
         >
             <div>
-                <div className={ `font-bold ${addCss.text} text-base` } >
+                <div className={ `font-bold ${addCss.text} text-base ` } >
                     {title}
-                    <input/>
+                    {/*<input/>*/}
                 </div>
                 <div className="text-sm text-(--gray-text) font-bold mt-2" >
                     {deadLine}
