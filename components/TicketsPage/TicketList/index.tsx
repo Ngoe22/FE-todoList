@@ -21,8 +21,6 @@ export default function TicketList (  ) {
     }
 
 
-
-
     const list =[] ;
     for ( const item of allTk ) {
         list.push(

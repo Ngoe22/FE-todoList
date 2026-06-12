@@ -1,6 +1,3 @@
-
-import type { Ticket } from "@/types"
-
 // components
 import { TopBar ,  TicketList , TaskList} from "@/components/TicketsPage"
 
@@ -40,7 +37,9 @@ export default async function Tickets ({ searchParams }: Props) {
             </div>
 
             <div className={ css.container + "grow "} >
-                <TaskList  />
+                <CurrentIdProvider CurrentId = { params } >
+                    <TaskList  />
+                </CurrentIdProvider>
             </div>
         </div>
     )

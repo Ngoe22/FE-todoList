@@ -7,6 +7,7 @@
     --df-text : rgb(0 0 0);
     --ctn-bg : white ;
     --gray-bg : rgb(241 241 241);
+    --white-bg : white;
 
     /*  tickets  */
     --tk-hl-text : rgb(29 78 216 );
@@ -22,7 +23,7 @@
     /*  task  undone inprogress testing done */
 
     --undone : rgb(255 107 87) ;
-    --inprogress :rgb(255 170 71) ;
+    --processing :rgb(255 170 71) ;
     --testing : rgb(92 212 133 ) ;
     --done : rgb(62 149 235) ;
     --stt-header : #ffffff;

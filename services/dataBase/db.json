@@ -63,7 +63,7 @@
       "projectId": "1",
       "ticketId": "1",
       "title": "Tạo cấu trúc thư mục",
-      "status": "testing",
+      "status": "undone",
       "deadline": "2026-06-01"
     },
     {
@@ -79,7 +79,7 @@
       "projectId": "1",
       "ticketId": "1",
       "title": "Cài thư viện cần thiết",
-      "status": "done",
+      "status": "testing",
       "deadline": "2026-06-03"
     },
     {
