@@ -20,6 +20,8 @@
 
     --tk-add-btn-clr: rgb(37 99 235) ;
 
+    --task-add-btn-bg :rgb(5 150 105) ;
+    --task-add-btn-txt : white ;
     /*  task  undone inprogress testing done */
 
     --undone : rgb(255 107 87) ;
@@ -27,6 +29,8 @@
     --testing : rgb(92 212 133 ) ;
     --done : rgb(62 149 235) ;
     --stt-header : #ffffff;
+
+
 
     /* ==================== components ====================  */
     --badge-bg : rgb(241 241 241);

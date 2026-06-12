@@ -1,4 +1,7 @@
 import * as React from "react";
+import InputSm from "@/components/InputSm"
+import {useEffect} from "react";
+
 
 interface Props {
     isSelected :boolean;
@@ -6,9 +9,11 @@ interface Props {
     deadLine : string;
     onselect : ()=>void;
     ondelete : ()=>void;
-    onedit : ()=>void;
+    onedit : (text :string)=>void;
 }
 export default function TicketItem ( {isSelected ,title , deadLine, onselect , ondelete , onedit } :Props ) {
+
+    const [ isEdit , setEdit ] = React.useState( false )
 
 
 
@@ -17,12 +22,16 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
     return (
         <li
             onClick={onselect}
-            className= {`flex justify-between p-3 border rounded-xl ${addCss.tag} `}
+            className= {`flex justify-between p-3 border rounded-xl gap-4 ${addCss.tag} `}
         >
-            <div>
-                <div className={ `font-bold ${addCss.text} text-base ` } >
+            <div className="grow" >
+                <div className={ `text-base font-bold ${addCss.text} relative w-full ` } >
                     {title}
-                    {/*<input/>*/}
+                    <InputSm
+                        isOpen={ isEdit }
+                        callback={onedit}
+                        initText ={title}
+                    />
                 </div>
                 <div className="text-sm text-(--gray-text) font-bold mt-2" >
                     {deadLine}
@@ -38,7 +47,7 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
                 </button>
                 <button
                     className={`cursor-pointer `}
-                    onClick={onedit}
+                    onClick={  ()=> setEdit( !isEdit )  }
                 >
                     ✏
                 </button>

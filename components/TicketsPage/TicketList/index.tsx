@@ -20,6 +20,8 @@ export default function TicketList (  ) {
             {scroll: false,});
     }
 
+
+
     const list =[] ;
     for ( const item of allTk ) {
         list.push(
@@ -32,13 +34,17 @@ export default function TicketList (  ) {
                 onselect = { ()=> {
                     ticketSelect(item.id )
                 } }
+
                 ondelete = { async ()=> {
                     const result = await ticketAPI.deleteCsr(item.id)
                     console.log(result)
-                    router.refresh()
+
                 } }
-                onedit={ ()=> {
-                    console.log(`edit`)
+                onedit={ async (text :string)=> {
+                    const result = await ticketAPI.updateCsr(item.id , {...item , title: text } )
+                    console.log(result)
+
+
                 } }
             />
         )
@@ -49,7 +55,7 @@ export default function TicketList (  ) {
             <h2 className=" pb-4 mb-4 border-b border-b-gray-300 font-bold text-xl" >
                 🏷️ Danh sách Ticket
             </h2>
-            <ul className="flex flex-col gap-4 overflow-auto" >
+            <ul className="flex flex-col gap-4 " >
                 {list}
             </ul>
             <AddTicket

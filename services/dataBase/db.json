@@ -15,13 +15,6 @@
   ],
   "tickets": [
     {
-      "id": "1",
-      "projectId": "1",
-      "title": "Thiết lập môi trường",
-      "description": "Thiết lập môi trường cho dự án Todo App",
-      "deadline": "2026-06-01"
-    },
-    {
       "id": "2",
       "projectId": "1",
       "title": "Phân tích yêu cầu",
@@ -41,32 +34,23 @@
       "description": "--",
       "projectId": "1",
       "id": "i8T_NbO"
+    },
+    {
+      "title": "3sza",
+      "deadline": "2026-07-30",
+      "description": "--",
+      "projectId": "1",
+      "id": "vS1_3wh"
     }
   ],
   "tasks": [
-    {
-      "id": "1",
-      "projectId": "1",
-      "ticketId": "1",
-      "title": "Tạo cấu trúc thư mục",
-      "status": "done",
-      "deadline": "2026-06-01"
-    },
     {
       "id": "2",
       "projectId": "1",
       "ticketId": "2",
       "title": "Tạo file cấu hình",
-      "status": "undone",
+      "status": "done",
       "deadline": "2026-06-02"
-    },
-    {
-      "id": "3",
-      "projectId": "1",
-      "ticketId": "1",
-      "title": "Cài thư viện cần thiết",
-      "status": "undone",
-      "deadline": "2026-06-03"
     },
     {
       "id": "4",

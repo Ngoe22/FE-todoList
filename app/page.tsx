@@ -12,6 +12,8 @@ export default function Home() {
           <div>Sử dụng lệnh docker compose up để khởi chạy dự án tại localhost:3000.</div>
           <div>Thống nhất sử dụng Tailwind CSS cho toàn bộ dự án.</div>
           <div>Cam on rat nhieu test</div>
+
+          <a href={`http://localhost:3000/Tickets?tk=1&pj=1`} >go!!</a>
       </>
   );
 }
