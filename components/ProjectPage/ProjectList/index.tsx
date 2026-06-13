@@ -17,7 +17,6 @@ export default function ProjectList ()  {
                 {projects.map((item :Project) => (
                     <div key={item.id} className="bg-white p-6 rounded-xl shadow-sm flex flex-col justify-between h-48 border border-gray-100">
 
-                        {/* Nội dung Card */}
                         <div>
                             <span className="bg-blue-50 text-blue-600 text-xs font-bold px-2 py-1 rounded"></span>
                             <h3 className="text-lg font-bold text-gray-800 mt-3">{item.name}</h3>
@@ -34,6 +33,7 @@ export default function ProjectList ()  {
                                 Xóa
                             </a>
                             <a
+                                href={`/Tickets?pj=${item.id}`}
                                 className="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-900 transition-colors"
                             >
                                 Vào Board

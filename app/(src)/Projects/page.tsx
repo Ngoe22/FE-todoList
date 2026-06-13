@@ -11,13 +11,10 @@ export default async function  Projects() {
     const { data: currentProject } = await projectAPI.getAll();
 
     return (
-        // Vùng bao ngoài cùng: nền xám nhạt, bọc toàn màn hình
+
         <div className="min-h-screen bg-gray-100 p-8 font-sans">
             <div className="max-w-5xl mx-auto">
 
-                {/* =========================================
-            1. TOP BAR
-        ========================================= */}
                 <div className="bg-white p-6 rounded-xl shadow-sm mb-6 flex justify-between items-center">
                     <div>
                         <h1 className="text-2xl font-bold text-gray-800">Dashboard Dự Án</h1>
@@ -25,10 +22,7 @@ export default async function  Projects() {
                     </div>
                 </div>
 
-                {/* ========================================= 2. PHẦN ADD (FORM) ========================================= */}
-
                 <AddProject></AddProject>
-                {/* =========================================3. DANH SÁCH CARD ========================================= */}
 
                 <ProjectsProvider  value={currentProject}>
                     <ProjectList></ProjectList>

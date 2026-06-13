@@ -77,20 +77,33 @@ export const projectAPI = {
   // Xóa project (kèm tickets và tasks phụ thuộc)
   deleteCsr: async (id) => {
     try {
-      // Lấy tất cả tickets của project
+
+
+      const tasksRes = await api_csr.get(`/tasks?projectId=${id}`);
+      const tasks = tasksRes.data;
+      await Promise.all(tasks.map(task => api_csr.delete(`/tasks/${task.id}`)));
+
       const ticketsRes = await api_csr.get(`/tickets?projectId=${id}`);
       const tickets = ticketsRes.data;
+      await Promise.all(tickets.map(task => api_csr.delete(`/tickets/${task.id}`)));
 
-      // Xóa tất cả tasks của project
-      await api_csr.delete(`/tasks?projectId=${id}`);
 
-      // Xóa tất cả tickets của project
-      for (let ticket of tickets) {
-        await api_csr.delete(`/tickets/${ticket.id}`);
-      }
+      // // Lấy tất cả tickets của project
+      // const ticketsRes = await api_csr.get(`/tickets?projectId=${id}`);d
+      // const tickets = ticketsRes.data;
+      //
+      // // Xóa tất cả tasks của project
+      // await api_csr.delete(`/tasks?projectId=${id}`);
+      //
+      // // Xóa tất cả tickets của project
+      // for (let ticket of tickets) {
+      //   await api_csr.delete(`/tickets/${ticket.id}`);
+      // }
 
       // Cuối cùng xóa project
       return api_csr.delete(`/projects/${id}`);
+
+
     } catch (error) {
       console.error("Error deleting project:", error);
       throw error;
@@ -123,11 +136,15 @@ export const ticketAPI = {
   // Xóa ticket (kèm tasks phụ thuộc)
   delete: async (id) => {
     try {
-      // Xóa tất cả tasks của ticket
-      await api.delete(`/tasks?ticketId=${id}`);
+
+      const tasksRes = await api.get(`/tasks?ticketId=${id}`);
+
+      const tasks = tasksRes.data;
+      await Promise.all(tasks.map(task => api.delete(`/tasks/${task.id}`)));
 
       // Xóa ticket
       return api.delete(`/tickets/${id}`);
+
     } catch (error) {
       console.error("Error deleting ticket:", error);
       throw error;
@@ -162,7 +179,6 @@ export const ticketAPI = {
 
       // Xóa ticket
       return api_csr.delete(`/tickets/${id}`);
-
 
     } catch (error) {
       console.error("Error deleting ticket:", error);
