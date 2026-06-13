@@ -2,10 +2,10 @@
 import { TopBar ,  TicketList , TaskList} from "@/components/TicketsPage"
 
 // hooks
-import { TicketsProvider ,CurrentIdProvider }  from "@/hooks/context/";
+import { TicketsProvider ,CurrentIdProvider ,TasksProvider }  from "@/hooks/context/";
 
 //service
-import { projectAPI, ticketAPI  } from "@/services/api/api.service"
+import { projectAPI, ticketAPI ,taskAPI  } from "@/services/api/api.service"
 
 // ==========================================================
 
@@ -21,27 +21,35 @@ export default async function Tickets ({ searchParams }: Props) {
     const params = await searchParams;
     const { data: currentProject } = await projectAPI.getById(params.pj);
     const { data: allTickets } = await ticketAPI.getByProjectId(params.pj);
+    const { data: allTasks } = await taskAPI.getAll();
+
+
 
     return (
-        <div className={"flex flex-wrap gap-x-8 gap-y-10 m-auto mt-10 w-[95%] mb-3"} >
-            <div className={ css.container + "w-4/4" } >
-                <TopBar projectName={currentProject.name } />
-            </div>
+            <div className={"grid grid-cols-4 gap-4 m-auto mt-10 w-[95%] mb-3"} >
+                <div className={ css.container + "col-span-4  " } >
+                    <TopBar projectName={currentProject.name } />
+                </div>
 
-            <div className={ css.container + "w-full lg:w-1/4" } >
-                <TicketsProvider allTickets={allTickets} >
+                <div className={ css.container + " col-span-4 lg:col-span-1" } >
+                    <TicketsProvider value={allTickets} >
+                        <CurrentIdProvider CurrentId = { params } >
+                            <TicketList />
+                        </CurrentIdProvider>
+                    </TicketsProvider>
+                </div>
+
+                <div className={ css.container + " col-span-4 lg:col-span-3"} >
                     <CurrentIdProvider CurrentId = { params } >
-                        <TicketList />
+                        <TasksProvider value = {allTasks} >
+                            <TaskList  />
+                        </TasksProvider>
                     </CurrentIdProvider>
-                </TicketsProvider>
+                </div>
             </div>
 
-            <div className={ css.container + "grow "} >
-                <CurrentIdProvider CurrentId = { params } >
-                    <TaskList  />
-                </CurrentIdProvider>
-            </div>
-        </div>
+
+
     )
 }
 

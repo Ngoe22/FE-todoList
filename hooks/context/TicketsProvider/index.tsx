@@ -5,13 +5,13 @@ import type { Ticket } from "@/types";
 import {AllTkContext} from "@/context"
 
 interface  Props {
-    allTickets : Ticket[]
+    value : Ticket[]
     children: ReactNode;
 }
-function TicketsProvider({ allTickets ,children } :Props) {
+function TicketsProvider({ value ,children } :Props) {
 
     return (
-        <AllTkContext.Provider value={allTickets} >
+        <AllTkContext.Provider value={value} >
             {children}
         </AllTkContext.Provider>
     )

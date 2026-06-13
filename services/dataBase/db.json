@@ -15,13 +15,6 @@
   ],
   "tickets": [
     {
-      "id": "2",
-      "projectId": "1",
-      "title": "Phân tích yêu cầu",
-      "description": "Phân tích yêu cầu cho dự án Todo App",
-      "deadline": "2026-06-02"
-    },
-    {
       "id": "3",
       "projectId": "2",
       "title": "Thiết kế database",
@@ -29,44 +22,45 @@
       "deadline": "2026-06-03"
     },
     {
-      "title": "123sqwe",
-      "deadline": "2026-06-17",
+      "title": "qwqweqw",
+      "deadline": "2026-06-04",
       "description": "--",
       "projectId": "1",
-      "id": "i8T_NbO"
+      "id": "dccffd0d-9bd0-495f-9bb6-ecdf39c1dec5"
     },
     {
-      "title": "3sza",
-      "deadline": "2026-07-30",
+      "title": "e11e",
+      "deadline": "2026-06-30",
       "description": "--",
       "projectId": "1",
-      "id": "vS1_3wh"
+      "id": "f01fdac8-5fe0-485d-9dcd-327c97774748"
+    },
+    {
+      "title": "moilam2",
+      "deadline": "2026-07-08",
+      "description": "--",
+      "projectId": "1",
+      "id": "ee2c5229-c486-4c3f-a11c-14d1a74d7715"
     }
   ],
   "tasks": [
     {
-      "id": "2",
+      "title": "123",
+      "deadline": "2026-07-07",
+      "description": "-",
+      "ticketId": "dccffd0d-9bd0-495f-9bb6-ecdf39c1dec5",
       "projectId": "1",
-      "ticketId": "2",
-      "title": "Tạo file cấu hình",
-      "status": "done",
-      "deadline": "2026-06-02"
+      "status": "undone",
+      "id": "8d20d1a0-ef4e-4c3e-9fc3-a7f4ef32ac69"
     },
     {
-      "id": "4",
-      "projectId": "2",
-      "ticketId": "3",
-      "title": "Tạo dữ liệu mẫu",
-      "status": "processing",
-      "deadline": "2026-06-04"
-    },
-    {
-      "id": "5",
-      "projectId": "2",
-      "ticketId": "3",
-      "title": "Tạo cấu trúc thư mục",
-      "status": "done",
-      "deadline": "2026-06-02"
+      "title": "qweqweqwe",
+      "deadline": "2026-06-22",
+      "description": "-",
+      "ticketId": "ee2c5229-c486-4c3f-a11c-14d1a74d7715",
+      "projectId": "1",
+      "status": "undone",
+      "id": "f6675899-aec8-412f-b3cf-588aaf16ec06"
     }
   ]
 }

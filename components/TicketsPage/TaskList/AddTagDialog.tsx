@@ -1,24 +1,30 @@
-import {useState} from "react";
+
+import {useContext, useState} from "react";
+import {CurrentID} from "@/context";
+import type {AddNewTask} from "@/types";
 
 interface Props {
     isOn : boolean;
     onCancel : () => void;
-    onConfirmPress : () => void;
+    onConfirmPress : ( {}:AddNewTask) => void;
 }
 export default function AddTaskDialog ( { isOn , onCancel ,onConfirmPress } : Props ) {
 
-    const [ formValues, setFormValues ] = useState( ()=>{
-        const initValue : { [key: string]: string } = {}
-        inputs.forEach((item)=> {
-            initValue[item.value] = ``
-        })
-        return initValue
-    } );
 
+    const currentId = useContext(CurrentID)
+
+    const [ formValues, setFormValues ] = useState <AddNewTask>  ({
+        title: "",
+        deadline: "",
+        description: "-",
+        ticketId: currentId.tk,
+        projectId: currentId.pj,
+        status :"undone"
+    });
 
     if (!isOn) return null ;
     return (
-        <div className=" fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-xs ">
+        <div className=" fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-xs z-50">
             <div
                 className={`bg-white p-3 rounded-md flex flex-col gap-2 min-w-3/4`}
             >
@@ -52,7 +58,10 @@ export default function AddTaskDialog ( { isOn , onCancel ,onConfirmPress } : Pr
                     </button>
                     <button
                         onClick={() => {
-                            onConfirmPress()
+                            for ( const [, value ] of Object.entries( formValues ) ) {
+                                if (!value) return alert("Hoàn tất thông tin trước khi thêm Task ")
+                            }
+                            onConfirmPress(formValues)
                         }}
                         className={`px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-semibold hover:bg-emerald-700 cursor-pointer`}
                     >
@@ -73,7 +82,7 @@ const inputs = [
     } ,
     {
         label : `Hạn nộp` ,
-        value : `daedLine` ,
+        value : `deadline` ,
         inputType : "date",
     } ,
 ] ;

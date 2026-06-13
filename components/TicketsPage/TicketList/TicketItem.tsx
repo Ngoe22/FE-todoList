@@ -15,6 +15,13 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
 
     const [ isEdit , setEdit ] = React.useState( false )
 
+    useEffect(
+        () => {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            if (!isSelected) setEdit(false)
+        },
+        [isSelected]
+    )
 
 
     const addCss = isSelected ? ticketCss.selected :ticketCss.default
@@ -27,11 +34,17 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
             <div className="grow" >
                 <div className={ `text-base font-bold ${addCss.text} relative w-full ` } >
                     {title}
+
                     <InputSm
-                        isOpen={ isEdit }
-                        callback={onedit}
                         initText ={title}
+                        isOpen={  isEdit }
+                        onClose = {()=> {setEdit(false)} }
+                        onSubmit={  (text)=>{
+                            onedit(text)
+                            setEdit(false)
+                        }}
                     />
+
                 </div>
                 <div className="text-sm text-(--gray-text) font-bold mt-2" >
                     {deadLine}
@@ -41,7 +54,11 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
             <div className="flex flex-col items-center justify-end gap-2 opacity-70" >
                 <button
                     className="cursor-pointer"
-                    onClick={ondelete}
+                    onClick={(e)=> {
+                        console.log(e)
+                        e.stopPropagation()
+                        ondelete()
+                    }}
                 >
                     🗑
                 </button>

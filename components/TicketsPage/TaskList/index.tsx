@@ -3,30 +3,28 @@
 import Header from "./Header"
 import TaskStatusCard from "./TaskStatusCard";
 import type {Task} from "@/types"
-import {useContext, useEffect, useState} from "react";
-import { CurrentID } from "@/context"
+import {createContext, useContext, useState} from "react";
+import {AllTaskContext, CurrentID} from "@/context"
 import {taskAPI} from "@/services/api/api.service";
+import { useRouter } from "next/navigation"
+
+// Trong component
+
+
+
+export const UpdateData = createContext(null)
+
 
 export default function TaskList () {
 
-    const currentID = useContext(CurrentID) ;
-    const [ tasks, setTasks ] = useState<Task[]|null>(null);
+    // const currentID = useContext(CurrentID) ;
+    const allTaskContext = useContext(AllTaskContext) ;
     const [draggingTasks, setDraggingTasks] = useState<Task|null>(null);
+    const router = useRouter()
 
-
-    useEffect(() => {
-        async function loadTasks() {
-            const res = await taskAPI.getByTicketIdCsr(currentID.tk);
-            // console.log(res.data)
-            setTasks(res.data);
-        }
-        loadTasks();
-    }, [currentID.tk]);
-
-    if (!tasks) return null;
 
     const taskFilter :{ [key: string]: Task[] } = {} ;
-    for ( const task of tasks) {
+    for ( const task of allTaskContext) {
         const status = task.status ;
         if ( taskFilter[status] ) {
             taskFilter[status].push( task )
@@ -44,26 +42,16 @@ export default function TaskList () {
                 status={type}
 
                 onstartdropCallback = {
-                    ( t:Task ) => {
-                        setDraggingTasks(t)
-                    }
+                    ( t:Task ) => {setDraggingTasks(t)}
                 }
+
                 ondropCallback = { async ()=> {
                     if ( draggingTasks && draggingTasks.status !== type ) {
                         const  updateTask = { ...draggingTasks , status : type }
                         const res = await taskAPI.updateCsr( updateTask.id , updateTask )
                         if(res.statusText !== "OK" )
-                            return alert(`something wrong  , pls try later`);
-
-                        setTasks(
-                            tasks.map (  (task) =>{
-                                    if ( task.id === draggingTasks.id ) {
-                                        task.status = type
-                                    }
-                                    return task
-                                }
-                            )
-                        )
+                            return alert(`!!! co loi , thu lai sau : ( `);
+                        router.refresh()
                     }
                 } }
             />

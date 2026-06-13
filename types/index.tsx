@@ -22,6 +22,7 @@ type Task = {
     title: string;
     status: Status;
     deadline: string;
+    description :string ;
 };
 
 
@@ -44,4 +45,14 @@ type AddNewTicket = {
     projectId : string ;
 }
 
-export type  {AllData,Project,Ticket,Task,Status , CurrentId , AddNewTicket}
+type AddNewTask = {
+    title : string ;
+    deadline : string ;
+    description : string ;
+    ticketId :string ;
+    projectId : string ;
+    status : Status ;
+    [key: string]: string;
+}
+
+export type  {AllData,Project,Ticket,Task,Status , CurrentId , AddNewTicket , AddNewTask}
