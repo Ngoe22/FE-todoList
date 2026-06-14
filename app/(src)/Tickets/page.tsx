@@ -9,7 +9,6 @@ import { projectAPI, ticketAPI ,taskAPI  } from "@/services/api/api.service"
 
 // ==========================================================
 
-
 interface Props {
     searchParams: Promise<{
         tk: string;
@@ -26,12 +25,12 @@ export default async function Tickets ({ searchParams }: Props) {
 
 
     return (
-            <div className={"grid grid-cols-4 gap-4 m-auto mt-10 w-[95%] mb-3"} >
+            <div className={"grid grid-cols-4 gap-4 m-auto  w-[95%] overflow-hidden mt-5 mb-3"} >
                 <div className={ css.container + "col-span-4  " } >
                     <TopBar projectName={currentProject.name } />
                 </div>
 
-                <div className={ css.container + " col-span-4 lg:col-span-1" } >
+                <div className={ css.container + " col-span-4 lg:col-span-1 h-[60vh]  lg:h-[85vh]" } >
                     <TicketsProvider value={allTickets} >
                         <CurrentIdProvider CurrentId = { params } >
                             <TicketList />
@@ -39,7 +38,7 @@ export default async function Tickets ({ searchParams }: Props) {
                     </TicketsProvider>
                 </div>
 
-                <div className={ css.container + " col-span-4 lg:col-span-3"} >
+                <div className={ css.container + " col-span-4 lg:col-span-3 h-[60vh]  lg:h-[85vh]"} >
                     <CurrentIdProvider CurrentId = { params } >
                         <TasksProvider value = {allTasks} >
                             <TaskList  />

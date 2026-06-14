@@ -1,11 +1,13 @@
-import AddTaskDialog from './AddTagDialog'
-import {useState} from "react";
+import AddTaskDialog from './AddTaskDialog'
+import {useContext, useState} from "react";
 import type {AddNewTask} from "@/types";
 import {taskAPI} from "@/services/api/api.service";
 import {useRouter} from "next/navigation";
+import {CurrentID} from "@/context";
 
 export default function  Header () {
 
+    const currentID = useContext(CurrentID)
     const router = useRouter()
     const [ isAdding , setIsAdding ] = useState(false);
 
@@ -18,7 +20,11 @@ export default function  Header () {
 
             </h3>
             <button
-                onClick={()=>{setIsAdding(true)}}
+                onClick={()=>{
+                    console.log(currentID.tk);
+                    if ( !currentID.tk ) return alert(`Chọn ticket truớc khi thêm Task !`)
+                    setIsAdding(true)
+                }}
                 className={`bg-(--task-add-btn-bg) text-(--task-add-btn-txt) px-3 py-2 rounded-md text-xs font-bold cursor-pointer`}
             >
                 + Thêm Task Mới
@@ -26,7 +32,6 @@ export default function  Header () {
             <AddTaskDialog
                 isOn={isAdding}
                 onCancel={()=>{
-                    console.log('Cancel');
                     setIsAdding(false)
                 }}
                 onConfirmPress={async ( data : AddNewTask )=>{

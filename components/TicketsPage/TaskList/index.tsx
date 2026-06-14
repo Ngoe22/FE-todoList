@@ -38,8 +38,6 @@ export default function TaskList () {
         return list
     },[allTaskContext, currentID.tk] )
 
-
-
     const statusCardsUI = [];
     for ( const type of status ) {
         statusCardsUI.push (
@@ -66,21 +64,17 @@ export default function TaskList () {
         )
     }
 
-
     return(
-        <div >
+        <div className={`h-full min-w-0 flex flex-col`} >
             <Header/>
             <ul
-                className={` grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3`}
+                className={`flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 min-h-0 `}
             >
                 {statusCardsUI}
             </ul>
         </div>
     )
 }
-
-
-
 
 const  status =  [ "undone" , "processing" , "testing" , "done" ]  as const ;
 

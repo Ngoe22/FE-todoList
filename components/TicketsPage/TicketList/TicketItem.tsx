@@ -31,8 +31,8 @@ export default function TicketItem ( {isSelected ,title , deadLine, onselect , o
             onClick={onselect}
             className= {`flex justify-between p-3 border rounded-xl gap-4 ${addCss.tag} `}
         >
-            <div className="grow" >
-                <div className={ `text-base font-bold ${addCss.text} relative w-full ` } >
+            <div className="grow min-w-0" >
+                <div className={ `text-base font-bold ${addCss.text} relative w-full  truncate` } >
                     {title}
 
                     <InputSm

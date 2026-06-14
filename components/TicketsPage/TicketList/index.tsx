@@ -48,12 +48,12 @@ export default function TicketList (  ) {
         )
     }
     return (
-        <div>
+        <div className={"h-full min-w-0 flex flex-col"} >
 
             <h2 className=" pb-4 mb-4 border-b border-b-gray-300 font-bold text-xl" >
                 🏷️ Danh sách Ticket
             </h2>
-            <ul className="flex flex-col gap-4 h-[50vh] overflow-auto [&::-webkit-scrollbar]:hidden" >
+            <ul className="flex-1 min-h-0 overflow-auto flex flex-col gap-4   [&::-webkit-scrollbar]:hidden" >
                 {list}
             </ul>
             <AddTicket

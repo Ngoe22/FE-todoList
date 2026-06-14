@@ -39,17 +39,27 @@ export const projectAPI = {
   // Xóa project (kèm tickets và tasks phụ thuộc)
   delete: async (id) => {
     try {
-      // Lấy tất cả tickets của project
+
+      const tasksRes = await api.get(`/tasks?projectId=${id}`);
+      const tasks = tasksRes.data;
+      await Promise.all(tasks.map(task => api.delete(`/tasks/${task.id}`)));
+
       const ticketsRes = await api.get(`/tickets?projectId=${id}`);
       const tickets = ticketsRes.data;
+      await Promise.all(tickets.map(task => api.delete(`/tickets/${task.id}`)));
 
-      // Xóa tất cả tasks của project
-      await api.delete(`/tasks?projectId=${id}`);
 
-      // Xóa tất cả tickets của project
-      for (let ticket of tickets) {
-        await api.delete(`/tickets/${ticket.id}`);
-      }
+      // Lấy tất cả tickets của project
+      // const ticketsRes = await api.get(`/tickets?projectId=${id}`);
+      // const tickets = ticketsRes.data;
+      //
+      // // Xóa tất cả tasks của project
+      // await api.delete(`/tasks?projectId=${id}`);
+      //
+      // // Xóa tất cả tickets của project
+      // for (let ticket of tickets) {
+      //   await api.delete(`/tickets/${ticket.id}`);
+      // }
 
       // Cuối cùng xóa project
       return api.delete(`/projects/${id}`);

@@ -40,9 +40,8 @@ export default function AddTicket ( {onadding} :Props )  {
             />
             <button
                 onClick={ () => {
-
-                    if ( !data.title  ||  !data.deadline ) {
-                        return alert(`Hoàn tất thông tin trước khi thêm Ticket `)
+                    for ( const [, value ] of Object.entries( data ) ) {
+                        if (!value.trim()) return alert("Hoàn tất thông tin trước khi thêm Ticket ")
                     }
                     onadding(data)
                     setData({ title : "", deadline : "" , description : "--"  , projectId : currentID.pj})

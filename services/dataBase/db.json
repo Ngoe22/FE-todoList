@@ -1,84 +1,161 @@
 {
   "projects": [
     {
-      "id": "1",
-      "name": "Todo App",
-      "description": "Dự án quản lý công việc cá nhân nâng cao",
-      "deadline": "2026-07-10"
+      "name": "du an 1 ( edited )",
+      "description": "--",
+      "deadline": "2026-06-23",
+      "id": "6b3d6f96-5b30-44d2-9760-45adfd6e1435"
     },
     {
-      "id": "2",
-      "name": "Laundry Payment System",
-      "description": "Hệ thống thanh toán cho tiệm giặt tự động",
-      "deadline": "2026-08-20"
+      "name": "du an 2",
+      "description": "--",
+      "deadline": "2026-06-20",
+      "id": "c02d368b-6e6d-43b1-a088-f65d00569912"
+    },
+    {
+      "name": "du an 3 (e)",
+      "description": "--",
+      "deadline": "2026-06-30",
+      "id": "ae37f8da-1c79-49a1-9895-b3a7adfe3934"
     }
   ],
   "tickets": [
     {
-      "id": "3",
-      "projectId": "2",
-      "title": "Thiết kế database",
-      "description": "Thiết kế database cho dự án Todo App",
-      "deadline": "2026-06-03"
-    },
-    {
-      "title": "qwqweqw",
-      "deadline": "2026-06-04",
+      "title": "ticket 1 ( edited )",
+      "deadline": "2026-06-25",
       "description": "--",
-      "projectId": "1",
-      "id": "dccffd0d-9bd0-495f-9bb6-ecdf39c1dec5"
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "id": "348b7493-4775-455f-9977-71f59b553564"
     },
     {
-      "title": "e11e",
+      "title": "ticket 2",
       "deadline": "2026-06-30",
       "description": "--",
-      "projectId": "1",
-      "id": "f01fdac8-5fe0-485d-9dcd-327c97774748"
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "id": "ca0265ba-a558-409d-816c-ebcee13a0cfe"
     },
     {
-      "title": "moilam2",
+      "title": "long nameeeeeeeeeeeeeeeeeeeeeeee",
+      "deadline": "2026-06-25",
+      "description": "--",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "id": "b2e80d2d-7e03-4831-bbc0-2da1ee6c0ff4"
+    },
+    {
+      "title": "cat 1",
+      "deadline": "2026-07-07",
+      "description": "--",
+      "projectId": "c02d368b-6e6d-43b1-a088-f65d00569912",
+      "id": "b1d03077-dc17-4dc0-b35b-74ad827565fd"
+    },
+    {
+      "title": "cat 2",
+      "deadline": "2026-07-09",
+      "description": "--",
+      "projectId": "c02d368b-6e6d-43b1-a088-f65d00569912",
+      "id": "69f0bd52-29e9-4558-b876-eaef5d3ec943"
+    },
+    {
+      "title": "ticket 3",
+      "deadline": "2026-06-30",
+      "description": "--",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "id": "d3ac9ea2-6563-451b-b96b-3ae9751e20e9"
+    },
+    {
+      "title": "ticket 4",
       "deadline": "2026-07-08",
       "description": "--",
-      "projectId": "1",
-      "id": "ee2c5229-c486-4c3f-a11c-14d1a74d7715"
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "id": "81419299-c06d-4154-923a-fca81634377f"
+    },
+    {
+      "title": "ticket 5",
+      "deadline": "2026-07-01",
+      "description": "--",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "id": "a802802c-dcb2-4be4-b05f-d2b45588ef63"
+    },
+    {
+      "title": "task1",
+      "deadline": "2026-06-24",
+      "description": "--",
+      "projectId": "ae37f8da-1c79-49a1-9895-b3a7adfe3934",
+      "id": "9d86c6ee-098c-4dd7-93ca-15251047a5d3"
     }
   ],
   "tasks": [
     {
-      "title": "123",
-      "deadline": "2026-07-07",
+      "title": "nhu chua he co cuoc chia ly ",
+      "deadline": "2026-07-03",
       "description": "-",
-      "ticketId": "dccffd0d-9bd0-495f-9bb6-ecdf39c1dec5",
-      "projectId": "1",
+      "ticketId": "348b7493-4775-455f-9977-71f59b553564",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
       "status": "undone",
-      "id": "8d20d1a0-ef4e-4c3e-9fc3-a7f4ef32ac69"
+      "id": "f17fd55c-9639-4d60-8238-6b9637b6ce4a"
     },
     {
-      "title": "qweqweqwe",
-      "deadline": "2026-06-22",
+      "title": "task 2",
+      "deadline": "2026-07-08",
       "description": "-",
-      "ticketId": "ee2c5229-c486-4c3f-a11c-14d1a74d7715",
-      "projectId": "1",
-      "status": "undone",
-      "id": "f6675899-aec8-412f-b3cf-588aaf16ec06"
+      "ticketId": "348b7493-4775-455f-9977-71f59b553564",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "status": "done",
+      "id": "c7f6626c-cb1d-434a-aa3c-fb25f3c61e84"
     },
     {
-      "title": "qweqwe",
-      "deadline": "2026-06-25",
+      "title": "task 3",
+      "deadline": "2026-06-27",
       "description": "-",
-      "ticketId": "3",
-      "projectId": "2",
+      "ticketId": "348b7493-4775-455f-9977-71f59b553564",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "status": "undone",
+      "id": "0755dd02-84bb-41e2-97cd-1610d41d9647"
+    },
+    {
+      "title": "task 4",
+      "deadline": "2026-07-02",
+      "description": "-",
+      "ticketId": "348b7493-4775-455f-9977-71f59b553564",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
       "status": "processing",
-      "id": "b29bf819-bf58-4b17-8b01-94132bbc76dc"
+      "id": "c4f11178-958e-46a6-a6d0-25e7fa5a3069"
     },
     {
-      "title": "cdss",
+      "title": "123123",
+      "deadline": "2026-06-19",
+      "description": "-",
+      "ticketId": "b1d03077-dc17-4dc0-b35b-74ad827565fd",
+      "projectId": "c02d368b-6e6d-43b1-a088-f65d00569912",
+      "status": "undone",
+      "id": "8c140bd4-8fbf-496f-8444-dc447e8dc695"
+    },
+    {
+      "title": "1 more",
+      "deadline": "2026-06-18",
+      "description": "-",
+      "ticketId": "348b7493-4775-455f-9977-71f59b553564",
+      "projectId": "6b3d6f96-5b30-44d2-9760-45adfd6e1435",
+      "status": "testing",
+      "id": "7dbda587-609b-4820-8cbc-d7d627032055"
+    },
+    {
+      "title": "task 2",
       "deadline": "2026-06-26",
       "description": "-",
-      "ticketId": "3",
-      "projectId": "2",
-      "status": "done",
-      "id": "04a914c2-a5ba-4edc-8993-3cc457627e9e"
+      "ticketId": "9d86c6ee-098c-4dd7-93ca-15251047a5d3",
+      "projectId": "ae37f8da-1c79-49a1-9895-b3a7adfe3934",
+      "status": "undone",
+      "id": "310780dd-8d80-4fd5-b27f-4cab5b798cbc"
+    },
+    {
+      "title": "task1 ",
+      "deadline": "2026-06-23",
+      "description": "-",
+      "ticketId": "9d86c6ee-098c-4dd7-93ca-15251047a5d3",
+      "projectId": "ae37f8da-1c79-49a1-9895-b3a7adfe3934",
+      "status": "undone",
+      "id": "ea5f9b8f-d431-457f-9e4f-bce4da3fadb4"
     }
   ]
 }
